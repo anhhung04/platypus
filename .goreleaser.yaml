@@ -27,7 +27,6 @@ builds:
       - windows
     goarch:
       - amd64
-      - arm
     ldflags:
       - -s -w
       - -X "github.com/anhhung04/platypus/pkg/version.Version={{.Version}}"
@@ -45,7 +44,6 @@ builds:
       - windows
     goarch:
       - amd64
-      - arm
     ldflags:
       - -s -w
       - -X "github.com/anhhung04/platypus/pkg/version.Version={{.Version}}"
@@ -63,7 +61,6 @@ builds:
       - windows
     goarch:
       - amd64
-      - arm
     ldflags:
       - -s -w
       - -X "github.com/anhhung04/platypus/pkg/version.Version={{.Version}}"
@@ -77,9 +74,7 @@ archives:
       {{ .ProjectName }}_
       {{- title .Os }}_
       {{- if eq .Arch "amd64" }}x86_64
-      {{- else if eq .Arch "386" }}i386
       {{- else }}{{ .Arch }}{{ end }}
-      {{- if .Arm }}v{{ .Arm }}{{ end }}
     # use zip for windows archives
     format_overrides:
       - goos: windows
